@@ -1,16 +1,15 @@
 ---
-name: "Template"
-guid: "eb5d7894-8eef-4b36-aa6f-5d124e828ce1"
-version: "1.0.0.0"
-targetAbi: "10.9.0.0"
-framework: "net8.0"
-overview: "Short description about your plugin"
+name: "Better Posters"
+guid: "862b7dbc-9485-41f2-a9d9-fc9ca66a6a51"
+version: "1.0.0"
+targetAbi: "10.11.10.0"
+framework: "net9.0"
+overview: "Fetch configurable Better Posters images from btttr.cc"
 description: >
-  This is a longer description that can span more than one
-  line and include details about your plugin.
-category: "General"
-owner: "jellyfin"
+  Fetches configurable btttr.cc primary posters for Jellyfin movies and shows.
+category: "MoviesAndShows"
+owner: "neureka"
 artifacts:
-- "Jellyfin.Plugin.Template.dll"
+- "BetterPosters.dll"
 changelog: >
-  changelog
+  Initial Better Posters release for Jellyfin 10.11.10.

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Better Posters</title>
+</head>
+<body>
+    <div id="BetterPostersConfigPage" data-role="page" class="page type-interior pluginConfigurationPage" data-require="emby-button,emby-select,emby-checkbox">
+        <div data-role="content">
+            <div class="content-primary">
+                <form id="BetterPostersConfigForm">
+                    <h2>Poster Options</h2>
+                    <div class="checkboxContainer checkboxContainer-withDescription">
+                        <label class="emby-checkbox-label">
+                            <input id="EnableTrendTags" name="EnableTrendTags" type="checkbox" is="emby-checkbox" />
+                            <span>Trend Tags</span>
+                        </label>
+                        <div class="fieldDescription checkboxFieldDescription">Trending, New, IMDb #3</div>
+                    </div>
+                    <div class="checkboxContainer checkboxContainer-withDescription">
+                        <label class="emby-checkbox-label">
+                            <input id="EnableQualityTags" name="EnableQualityTags" type="checkbox" is="emby-checkbox" />
+                            <span>Quality Tags</span>
+                        </label>
+                        <div class="fieldDescription checkboxFieldDescription">4K, Dolby Vision, Atmos badges</div>
+                    </div>
+                    <div class="checkboxContainer checkboxContainer-withDescription">
+                        <label class="emby-checkbox-label">
+                            <input id="EnableGenre" name="EnableGenre" type="checkbox" is="emby-checkbox" />
+                            <span>Genre</span>
+                        </label>
+                        <div class="fieldDescription checkboxFieldDescription">Genre label at bottom</div>
+                    </div>
+                    <div class="checkboxContainer checkboxContainer-withDescription">
+                        <label class="emby-checkbox-label">
+                            <input id="EnableRating" name="EnableRating" type="checkbox" is="emby-checkbox" />
+                            <span>Rating</span>
+                        </label>
+                        <div class="fieldDescription checkboxFieldDescription">Star rating at bottom</div>
+                    </div>
+                    <div class="selectContainer">
+                        <label class="selectLabel" for="RatingSource">Source</label>
+                        <select is="emby-select" id="RatingSource" name="RatingSource" class="emby-select-withcolor emby-select">
+                            <option value="Average">Average</option>
+                            <option value="Imdb">IMDb (/10)</option>
+                            <option value="Tmdb">TMDB (/10)</option>
+                            <option value="RottenTomatoes">Rotten Tomatoes (%)</option>
+                            <option value="Metacritic">Metacritic (/100)</option>
+                            <option value="Trakt">Trakt (/10)</option>
+                            <option value="Letterboxd">Letterboxd (/5)</option>
+                            <option value="RogerEbert">Roger Ebert (/4)</option>
+                        </select>
+                    </div>
+                    <div class="checkboxContainer checkboxContainer-withDescription">
+                        <label class="emby-checkbox-label">
+                            <input id="EnableAgeRating" name="EnableAgeRating" type="checkbox" is="emby-checkbox" />
+                            <span>Age Rating</span>
+                        </label>
+                        <div class="fieldDescription checkboxFieldDescription">PG-13, TV-MA, R</div>
+                    </div>
+                    <div class="selectContainer">
+                        <label class="selectLabel" for="Language">Language</label>
+                        <select is="emby-select" id="Language" name="Language" class="emby-select-withcolor emby-select">
+                            <option value="English">English</option>
+                            <option value="Spanish">Español</option>
+                            <option value="French">Français</option>
+                            <option value="German">Deutsch</option>
+                            <option value="PortugueseBrazil">Português (Brasil)</option>
+                            <option value="PortuguesePortugal">Português (Portugal)</option>
+                            <option value="Italian">Italiano</option>
+                            <option value="Dutch">Nederlands</option>
+                            <option value="Polish">Polski</option>
+                            <option value="Russian">Русский</option>
+                            <option value="Turkish">Türkçe</option>
+                            <option value="Arabic">العربية</option>
+                            <option value="Japanese">日本語</option>
+                            <option value="Korean">한국어</option>
+                            <option value="Chinese">中文</option>
+                            <option value="Hindi">हिन्दी</option>
+                            <option value="Swedish">Svenska</option>
+                            <option value="Czech">Čeština</option>
+                        </select>
+                    </div>
+                    <div class="selectContainer">
+                        <label class="selectLabel" for="AutoUpdateSchedule">Auto Update Posters</label>
+                        <select is="emby-select" id="AutoUpdateSchedule" name="AutoUpdateSchedule" class="emby-select-withcolor emby-select">
+                            <option value="Disabled">Disabled</option>
+                            <option value="Daily">Daily (day starts at 12 AM)</option>
+                            <option value="Weekly">Weekly (Sunday at 12 AM)</option>
+                            <option value="Monthly">Monthly (month starts at 12 AM)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button is="emby-button" type="submit" class="raised button-submit block emby-button">
+                            <span>Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var BetterPostersConfig = {
+                pluginUniqueId: '862b7dbc-9485-41f2-a9d9-fc9ca66a6a51'
+            };
+
+            function betterPostersElement(id) {
+                return document.querySelector('#' + id);
+            }
+
+            document.querySelector('#BetterPostersConfigPage')
+                .addEventListener('pageshow', function() {
+                    Dashboard.showLoadingMsg();
+                    ApiClient.getPluginConfiguration(BetterPostersConfig.pluginUniqueId).then(function (config) {
+                        betterPostersElement('EnableTrendTags').checked = config.EnableTrendTags;
+                        betterPostersElement('EnableQualityTags').checked = config.EnableQualityTags;
+                        betterPostersElement('EnableGenre').checked = config.EnableGenre;
+                        betterPostersElement('EnableRating').checked = config.EnableRating;
+                        betterPostersElement('RatingSource').value = config.RatingSource;
+                        betterPostersElement('EnableAgeRating').checked = config.EnableAgeRating;
+                        betterPostersElement('Language').value = config.Language;
+                        betterPostersElement('AutoUpdateSchedule').value = config.AutoUpdateSchedule;
+                        Dashboard.hideLoadingMsg();
+                    });
+                });
+
+            document.querySelector('#BetterPostersConfigForm')
+                .addEventListener('submit', function(e) {
+                    Dashboard.showLoadingMsg();
+                    ApiClient.getPluginConfiguration(BetterPostersConfig.pluginUniqueId).then(function (config) {
+                        config.EnableTrendTags = betterPostersElement('EnableTrendTags').checked;
+                        config.EnableQualityTags = betterPostersElement('EnableQualityTags').checked;
+                        config.EnableGenre = betterPostersElement('EnableGenre').checked;
+                        config.EnableRating = betterPostersElement('EnableRating').checked;
+                        config.RatingSource = betterPostersElement('RatingSource').value;
+                        config.EnableAgeRating = betterPostersElement('EnableAgeRating').checked;
+                        config.Language = betterPostersElement('Language').value;
+                        config.AutoUpdateSchedule = betterPostersElement('AutoUpdateSchedule').value;
+                        ApiClient.updatePluginConfiguration(BetterPostersConfig.pluginUniqueId, config).then(function (result) {
+                            Dashboard.processPluginConfigurationUpdateResult(result);
+                        });
+                    });
+
+                    e.preventDefault();
+                    return false;
+                });
+        </script>
+    </div>
+</body>
+</html>
