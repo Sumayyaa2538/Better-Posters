@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Logo.png" alt="Logo" height="128px" />
+<img src="Assets/Logo.png" alt="Logo" height="128px" />
 
 # Better Posters
 
@@ -10,7 +10,7 @@
 [![AI](https://img.shields.io/badge/AI-assisted-5786FE?style=flat-square&logo=deepseek&logoColor=5786FE)](https://code.neureka.dev/jellyfin/better-posters)
 [![Stars](https://img.shields.io/github/stars/NeurekaSoftware/Better-Posters?style=flat-square&label=Stars&color=EAB308&logo=googlegemini&logoColor=EAB308)](https://code.neureka.dev/jellyfin/better-posters)
 
-**Better Posters** is a Jellyfin image fetcher for Movies and Shows that pulls configurable primary posters from [btttr.cc](https://btttr.cc).
+**Better Posters** is an unofficial Jellyfin plugin that lets you replace standard movie and show posters with customizable posters from [btttr.cc](https://btttr.cc).
 
 </div>
 
