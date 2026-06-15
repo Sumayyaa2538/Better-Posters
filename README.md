@@ -64,8 +64,8 @@ Default settings:
 - **Trend Tags:** Enabled
 - **Quality Tags:** Disabled
 - **Genre:** Enabled
-- **Rating:** Enabled
-- **Source:** Average
+- **Ratings:** Enabled
+- **Ratings Source:** Average
 - **Age Rating:** Disabled
 - **Language:** English
 - **Auto Update Posters:** Disabled
