@@ -1,6 +1,19 @@
+<div align="center">
+
 # Better Posters
 
-**Better Posters** is a Jellyfin image fetcher for Movies and Shows that pulls configurable primary posters from [btttr.cc](https://btttr.cc). It uses the media item's IMDb ID and lets you choose poster badges, labels, rating source, and language from the Jellyfin plugin settings page.
+[![Release](https://img.shields.io/badge/dynamic/json.svg?style=flat-square&logo=git&logoColor=F43F5E&label=Release&color=F43F5E&url=https://code.neureka.dev/api/v1/repos/jellyfin/better-posters/releases&query=$[0].tag_name)](https://code.neureka.dev/jellyfin/better-posters/releases)
+[![Actions](https://img.shields.io/badge/dynamic/json?style=flat-square&logo=gitlfs&logoColor=8B5CF6&label=Actions&color=8B5CF6&url=https://code.neureka.dev/api/v1/repos/jellyfin/better-posters/actions/runs&query=workflow_runs[0].status)](https://code.neureka.dev/jellyfin/better-posters/actions)
+[![License](https://img.shields.io/github/license/NeurekaSoftware/Better-Posters?style=flat-square&label=License&color=14B8A6&logo=opensourceinitiative&logoColor=14B8A6)](./LICENSE.md)
+[![AI](https://img.shields.io/badge/AI-assisted-5786FE?style=flat-square&logo=deepseek&logoColor=5786FE)](https://code.neureka.dev/jellyfin/better-posters)
+[![Stars](https://img.shields.io/github/stars/NeurekaSoftware/Better-Posters?style=flat-square&label=Stars&color=EAB308&logo=googlegemini&logoColor=EAB308)](https://code.neureka.dev/jellyfin/better-posters)
+
+**Better Posters** is a Jellyfin image fetcher for Movies and Shows that pulls configurable primary posters from [btttr.cc](https://btttr.cc).
+
+</div>
+
+> [!IMPORTANT]  
+> This repository's GitHub mirror is for reference only. Please submit bug reports and feature requests to our [official Forgejo repository](https://code.neureka.dev/jellyfin/better-posters).
 
 **Minimum Jellyfin version:** 10.11.10
 
