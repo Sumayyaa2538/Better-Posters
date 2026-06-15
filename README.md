@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="Logo.png" alt="Logo" height="128px" />
+
 # Better Posters
 
 [![Release](https://img.shields.io/badge/dynamic/json.svg?style=flat-square&logo=git&logoColor=F43F5E&label=Release&color=F43F5E&url=https://code.neureka.dev/api/v1/repos/jellyfin/better-posters/releases&query=$[0].tag_name)](https://code.neureka.dev/jellyfin/better-posters/releases)
