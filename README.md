@@ -14,7 +14,30 @@
 
 ## Installation Guide
 
-### Step 1: Build the Plugin
+### Option 1: Install from the Plugin Repository
+
+1. Open **Dashboard -> Plugins -> Repositories** in Jellyfin.
+2. Add this repository URL:
+
+    ```text
+    https://code.neureka.dev/jellyfin/better-posters/raw/branch/master/manifest.json
+    ```
+
+3. Open **Dashboard -> Plugins -> Catalog**.
+4. Select **Better Posters** and install the latest compatible version.
+5. Restart Jellyfin.
+6. Confirm **Better Posters** appears under **Dashboard -> Plugins -> My Plugins**.
+
+### Option 2: Install Manually from a Release
+
+1. Download the latest `better-posters_*.zip` asset from the [Forgejo releases page](https://code.neureka.dev/jellyfin/better-posters/releases).
+2. Stop Jellyfin.
+3. Create a Better Posters plugin folder under your Jellyfin plugins directory.
+4. Extract the release zip into that folder.
+5. Start Jellyfin.
+6. Confirm **Better Posters** appears under **Dashboard -> Plugins -> My Plugins**.
+
+### Option 3: Build from Source
 
 1. Install the .NET SDK that can build `net9.0` projects.
 2. From this repository, run:
@@ -24,14 +47,11 @@
     ```
 
 3. Locate the published `BetterPosters.dll`.
-
-### Step 2: Install the Plugin
-
-1. Stop Jellyfin.
-2. Create a Better Posters plugin folder under your Jellyfin plugins directory.
-3. Copy `BetterPosters.dll` into that folder.
-4. Start Jellyfin.
-5. Confirm **Better Posters** appears under **Dashboard -> Plugins -> My Plugins**.
+4. Stop Jellyfin.
+5. Create a Better Posters plugin folder under your Jellyfin plugins directory.
+6. Copy `BetterPosters.dll` into that folder.
+7. Start Jellyfin.
+8. Confirm **Better Posters** appears under **Dashboard -> Plugins -> My Plugins**.
 
 This plugin is built for Jellyfin 10.11.10 and may not load on older Jellyfin versions.
 
