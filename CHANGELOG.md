@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-06-16
+
+### Added
+- Add catalog and preview artwork for plugin listings.
+
+### Fixed
+- Prevent Update Better Posters from replacing posters in libraries where Better Posters is disabled.
+
 ## [1.0.2] - 2026-06-15
 
 ### Fixed
